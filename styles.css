@@ -1,0 +1,121 @@
+/* 2.1 - Estilos Globais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header,
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+.content {
+  padding: 2em;
+}
+.text-section,
+.image-section {
+  margin-bottom: 2em;
+}
+
+/* 3 - Breakpoints Comuns */
+
+/* 3.1 - Mobile First */
+@media (min-width: 600px) {
+  .content {
+    display: flex;
+    justify-content: space-around;
+  }
+  .text-section,
+  .image-section {
+    flex: 1;
+    margin: 0 1em;
+  }
+}
+
+/* 3.2 - Breakpoint para Tablets */
+@media (min-width: 768px) {
+  body {
+    font-size: 1.2rem;
+  }
+  .header {
+    font-size: 1.5rem;
+  }
+}
+
+/* 3.3 - Breakpoint para Desktop */
+@media (min-width: 1024px) {
+  .content {
+    padding: 3em;
+  }
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* 4 - Media Queries Avançadas */
+
+/* 4.1 - Orientação: Paisagem */
+@media (orientation: landscape) {
+  .header {
+    background-color: #555;
+  }
+}
+
+/* 4.2 - Preferência de Tema: Claro/Escuro */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+  .header,
+  .footer {
+    background-color: #1e1e1e;
+  }
+}
+
+/* 4.3 - Resolução de Tela Alta (Retina) */
+@media (min-resolution: 2dppx) {
+  .image-section img {
+    border: 2px solid #333;
+  }
+}
+
+/* 5 - Outros Estilos para Demonstrar */
+
+/* 5.1 - Estilo Diferente para Testar Visualização em Dispositivos Pequenos */
+@media (max-width: 599px) {
+  .header {
+    font-size: 1.2rem;
+    background-color: #777;
+  }
+  .content {
+    padding: 1em;
+  }
+}
+
+/* 6 - Utilizando Operadores Lógicos (and, not, only) */
+
+/* 6.1 - Utilizando "and" para combinar condições */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .content {
+    border: 2px dashed #333;
+  }
+}
+
+/* 6.2 - Utilizando "not" para excluir condições */
+@media not all and (min-width: 768px) {
+  .footer {
+    background-color: #444;
+  }
+}
+
+/* 6.3 - Utilizando "only" para especificar um tipo de mídia */
+@media only screen and (max-width: 480px) {
+  body {
+    background-color: #eee;
+  }
+}
